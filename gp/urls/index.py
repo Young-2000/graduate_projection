@@ -4,5 +4,5 @@ from gp.views.index import index
 
 urlpatterns = [
     path("", index, name="index"),
-    path("test_page", include("gp.urls.test_page.index")),
+    path("test_page/", include("gp.urls.test_page.index")),
 ]
