@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+# 只会在web段被调用
+from django.shortcuts import render # 渲染html
 
 def index(request):
-    return HttpResponse("网络暴力语言检测")
+    return render(request, "test_page/web.html")

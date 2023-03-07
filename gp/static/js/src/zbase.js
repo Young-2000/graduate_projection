@@ -1,0 +1,6 @@
+class GP {
+    constructerid(id) {
+        
+    }
+}
+
