@@ -49,13 +49,13 @@ class GPTestPage {
 
     validation_input() {
         let outer = this;
-        let input = this.$testpage_input.val();
+        let text = this.$testpage_input.val();
         
         $.ajax({
             url: "http://124.222.103.9:9000/test_page/getinfo/",
             type: "GET",
             data: {
-                input: input,
+                text: text,
             },
             success: function(resp) {
                 if (resp.result === "success") {
