@@ -8,6 +8,7 @@ def getinfo(request):
     text = request.GET.get("text")
     bully_result = text_prediction(text)
 
+    print(text)
     print(bully_result)
 
     if bully_result == 1:

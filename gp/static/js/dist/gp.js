@@ -32,6 +32,8 @@ class GPTestPage {
 
         this.root.$gp.append(this.$testpage);
 
+
+        this.click_flag = "1";
         this.start();
     }
 
@@ -42,9 +44,15 @@ class GPTestPage {
     add_listening_event() {
         let outer = this;
 
-        this.$testpage_val.click(function() {
-            outer.validation_input();
-        });
+
+        if (outer.$testpage_image.src !== 'static/images/test_page/wait.png') {
+            this.$testpage_val.click(function() {
+                outer.$testpage_image.attr('src', 'static/images/test_page/wait.png')
+                outer.validation_input();
+            });
+        } else {
+            console.log("不要连续点击");
+        }
     }
 
     validation_input() {
@@ -59,6 +67,7 @@ class GPTestPage {
             },
             success: function(resp) {
                 if (resp.result === "success") {
+
                     outer.$testpage_image.attr('src', resp.val_return);
                 }
             }
